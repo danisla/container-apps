@@ -9,13 +9,25 @@
           "type": "integer",
           "title": "HTTP Port",
           "description": "{{GITLAB_WEB_HOST_PORT_DESC}}",
-		  "required": true
+          "required": true
         },
         "ssh_port": {
           "type": "integer",
           "title": "SSH Port",
           "description": "{{GITLAB_SSH_HOST_PORT_DESC}}",
-		  "required": true
+          "required": true
+        },
+        "smtp_user": {
+          "type": "string",
+          "title": "SMTP Username",
+          "description": "Username for SMTP server",
+          "required": false
+        },
+        "smtp_pass": {
+          "type": "string",
+          "title": "SMTP Password",
+          "description": "Password for SMTP server",
+          "required": false
         }
       },
       "form": [
@@ -34,6 +46,12 @@
       "ssh_port": [
         "gitlab.environment.GITLAB_SSH_PORT",
         "gitlab.ports[1]"
+      ],
+      "smtp_user": [
+        "gitlab.environment.SMTP_USER"
+      ],
+      "smtp_pass": [
+        "gitlab.environment.SMTP_PASS"
       ]
     }
   }
